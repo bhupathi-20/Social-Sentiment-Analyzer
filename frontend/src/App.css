@@ -1,0 +1,275 @@
+/* src/App.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #ffffff;
+  background-image:url(back5.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #f5f5f5;  /* Light color for headings */
+  font-family: 'Roboto', sans-serif;  /* Stylish and modern font */
+  font-weight: 600;  /* Make the font bold */
+  margin: 20px 0;  /* Add some space around the headings */
+}
+
+/* Add some styling to create a gradient background */
+h1:first-of-type {
+  background: linear-gradient(45deg, #ff6a00, #ff0000);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 36px;
+  padding: 10px 0;
+}
+
+h1:nth-of-type(2) {
+  background: linear-gradient(45deg, #00bcd4, #009688);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 32px;
+  padding: 10px 0;
+}
+
+.search-container {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 15px;
+  width: 300px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(2, 0, 0, 2);
+}
+
+button {
+  padding: 15px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 4px rgba(2, 0, 0, 2);
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+
+.result-container {
+  margin-top: 20px;
+  padding: 15px;
+  /*border: 1px solid #ccc;*/
+  border-radius: 5px;
+  background-color: #fff;
+  
+}
+
+.result-container h3 {
+  margin: 0;
+  color: #007bff;
+}
+
+.result-container p {
+  color: #555;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.suggestions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  background: white;
+  position: absolute; /* Keep it positioned relative to the input */
+  z-index: 1000; /* Ensure it appears above other elements */
+  width: calc(23% - 2px); /* Match input width, accounting for border */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+.suggestions li {
+  padding: 10px 15px; /* Improved padding */
+  cursor: pointer;
+  transition: background-color 0.2s; /* Smooth transition for hover effect */
+}
+
+.suggestions li:hover {
+  background-color: #007bff; /* Highlight on hover */
+  color: white; /* Change text color on hover */
+}
+
+/* Optional: Add a fade-in effect for suggestions */
+.suggestions {
+  animation: fadeIn 0.3s ease-in-out; /* Add fade-in animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px); /* Slightly slide in */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feedback-button {
+  padding: 10px 15px; /* Adjust padding */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #28a745; /* Green background */
+  color: white; /* Text color */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor */
+  margin-top: 10px; /* Space above button */
+  transition: background-color 0.3s; /* Smooth background color change */
+}
+
+.feedback-button:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+.navbar {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.navbar li {
+  float: left;
+}
+
+.navbar li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar li a:hover {
+  background-color: #ddd;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropdown-toggle {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-menu a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-menu a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.title{
+  margin-top: 20px;
+  padding: 15px;
+  /*border: 1px solid #ccc;*/
+  border-radius: 5px;
+  background-color: #f5ac6c;
+}
+
+
+/* Sentiment Data Styles */
+.sentiment-data {
+  margin-top: 20px;
+}
+
+.captions-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.captions-group > div {
+  width: 30%;
+  padding: 10px;
+}
+
+.captions-group h3 {
+  text-align: center;
+}
+
+.positive-captions {
+  background-color: #d4edda; /* Light green for positive */
+}
+
+.neutral-captions {
+  background-color: #f8f9fa; /* Light gray for neutral */
+}
+
+.negative-captions {
+  background-color: #f8d7da; /* Light red for negative */
+}
+
+.sentiment-data ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.sentiment-data li {
+  margin: 10px 0;
+}
